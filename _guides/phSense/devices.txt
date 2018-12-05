@@ -1,0 +1,8 @@
+DC Regulator		--> TLV431
+
+OpAMPs
+LM318 or LM324      --> offset no over 10mV (phSense output is 56,16mV/PH @ 25ºC)
+
+
+//Calculos para o TLV431
+
