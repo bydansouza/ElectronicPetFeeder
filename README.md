@@ -1,37 +1,42 @@
+# About this! 
 Electronic Pet Feeder Project - Automatic Feeder for Dogs and Cats ;)
+
 By Daniel Henrique Camargo de Souza @ PIN22107 - IFSC/Electronic Engineering/Professors: Daniel Lohmann AND Robinson Pizzio
+
 Dezembro/2018
 
-*************** DESCRIPT:
---> This project consist in a electronic automatic feeder for dogs and cats, and this maked from course Integrated Project class in undergraduate at Electronic Engineering by IFSC/Florianópolis@Brazil.
---> 
+# Descript:
+* This project consist in a electronic automatic feeder for dogs and cats, and this maked from course Integrated Project class in undergraduate at Electronic Engineering by IFSC/Florianópolis@Brazil.
 
-*************** STEPS FOR BUILDING:
-1) Market research:
+
+# Steps for building:
+
+* 1)' Market research:
     --> From Internet, 
-    
-2) Patent's research:
+
+* 2) Patent's research:
 
 
-3) Similar Products:
+* 3) Similar Products:
 
 
-4) Diferenciais Attributes:
+* 4) Diferenciais Attributes:
 
 
-*************** MECHANICAL PROJECT
+# Mechanical Project
 
 
-
-*************** ELECTRONIC PROJECT
-
+# Electronic Project
 
 
-*************** MAIN CODE
+# Main Code
+
+* Use the [esp-open-rtos](https://github.com/SuperHouse/esp-open-rtos),
+
+* `[Here](https://github.com/xtarke/kairos/tree/master/codes/mqtt)`
 
 
-
-*************** REFERENCES
+# References
     - https://www.thingiverse.com/thing:27854
     - https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/
     - https://www.hackster.io/circuito-io-team/iot-pet-feeder-10a4f3
@@ -40,7 +45,7 @@ Dezembro/2018
     - https://www.youtube.com/watch?v=hpQ21NZ_fuw
     
     
-*************** GUIDE TO USE THIS FILES (PROJECT)
+# Guide to use this repository folders and files
     
     
     
@@ -49,7 +54,7 @@ Dezembro/2018
 
 
 
-# This Project
+This Project
 - Automatic pet feeder 
     (Diferenciais: 
         - Todas as Configurações via APP
