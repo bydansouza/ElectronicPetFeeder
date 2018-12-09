@@ -1,147 +1,84 @@
 # About this! 
 Electronic Pet Feeder Project - Automatic Feeder for Dogs and Cats ;)
 
-By Daniel Henrique Camargo de Souza @ PIN22107 - IFSC/Electronic Engineering/Professors: Daniel Lohmann AND Robinson Pizzio
-
-Dezembro/2018
+By Daniel Henrique Camargo de Souza @ PIN22107 - IFSC/Electronic Engineering/Professors: Daniel Lohmann AND Robinson Pizzio - Dezembro/2018
 
 # Descript:
-* This project consist in a electronic automatic feeder for dogs and cats, and this maked from course Integrated Project class in undergraduate at Electronic Engineering by IFSC/Florianópolis@Brazil.
+* This project consists of an electronic automatic feeder for dogs and cats, and this project were made from course Integrator Project class in undergraduate at Electronic Engineering by IFSC/Florianópolis@Brazil.
 
+# Guide to using this repository folders and files
+Here you find this structure of folders and files
 
-# Steps for building:
+* `CODE` contains the main code, the Makefile and includes for compile code to microcontroller ESP8266. 
 
-* 1)' Market research:
-    --> From Internet, 
+* `ELECTRONIC_DESIGN` contains the files for electronic scheme and PCB design of the circuit for the control system.
 
-* 2) Patent's research:
+* `MECHANICAL_DESIGN` contain the files of mechanical part, essentially the helicoid part design, other parts were made from commercials items.
 
+* `_guides` contain files for learning about sensor and controllers used in this project, essentially datasheets and manuals
 
-* 3) Similar Products:
+* `_models` contain files for other electronic pet feeder, but this was made with Arduino (sic) 
 
+* `_patents` contain files of patents discovered about electronic pet feeders.
 
-* 4) Diferenciais Attributes:
+* `_refs` Others references files
 
+# Steps for sucess:
+
+* 1) Market research:
+    ** First we proceded in a market research, seeking out a similar product. **
+    
+    List of similar products:
+    
+    [10 Best Automatic Pet Feeders 2017](https://www.youtube.com/watch?v=MUnrIJn3qq8)
+    
+    [10 Best Automatic Pet Feeders 2018](https://www.youtube.com/watch?v=D8cHpOWlC1c)
+    
+    [JEMPET Petwant SmartFeeder Automatic Pet Feeder](http://www.petwant.com/)
+    
+    [Automatic Cat Feeder | PF-10 CAT](https://www.petfeedster.com/product/automatic-cat-feeder/)
+        
+    ** in following, we search the prices of these similar products **
+    
+    [JEMPET Petwant SmartFeeder Automatic Pet Feeder](https://www.amazon.com/Petwant-SmartFeeder-Automatic-Dispenser-Controlled/dp/B01GFTZPDQ)
+    
+    [Smart Feed Automatic Pet Feeder](https://store.petsafe.net/smart-feed)
+    
+    [Automatic Cat Feeder | PF-10 CAT](https://www.amazon.com/New-Pet-Feedster-PF-10-PLUS/dp/B01N9D4672)
+    
+    
+* 2) Diferenciais Attributes for this project:
+
+    All configs via MQTT
+    
+    Notification for user 
+    
+    Water control, Temperature and level
 
 # Mechanical Project
 
+    this project is a prototype, then we use PVC commercial tubes of the 100mm to make mechanical part. however, for helicoidal transport of feed, we maked (via freecad) a design of the helicoid and built it via 3D printer. this part design you can see in folder `MECHANICAL_DESIGN`
+    
+    we inspired from [Helidoid Model](https://www.thingiverse.com/thing:27854)
 
 # Electronic Project
+
+    Let's go to the part that interest us. For the control system, we use a microcontroller ESP8266 because it contain various periferics integrated, example is Wi-Fi Module.
 
 
 # Main Code
 
-* Use the [esp-open-rtos](https://github.com/SuperHouse/esp-open-rtos),
+* this code is based in esp-open-rtos sdk to ESP8266, then recommended to use the [esp-open-rtos](https://github.com/SuperHouse/esp-open-rtos)
 
 * `[Here](https://github.com/xtarke/kairos/tree/master/codes/mqtt)`
 
 
 # References
-    - https://www.thingiverse.com/thing:27854
+    - 
     - https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/
     - https://www.hackster.io/circuito-io-team/iot-pet-feeder-10a4f3
     - https://www.circuito.io/blog/automatic-pet-feeder/
     - https://circuitdigest.com/microcontroller-projects/automatic-pet-feeder-using-arduino
     - https://www.youtube.com/watch?v=hpQ21NZ_fuw
     
-    
-# Guide to use this repository folders and files
-    
-    
-    
 
-
-
-
-
-This Project
-- Automatic pet feeder 
-    (Diferenciais: 
-        - Todas as Configurações via APP
-            - Dosagem por Peso {Concorrentes são pelo tempo, não tendo precisão no peso da dosagem}
-            - Horarios da Dose
-        - Notifição/Monitoramento da quantidade da ração/alimento (Falta ou Acabando/Reposição) [Monitor do Nível]
-        - Controle da Agua
-            - PH e Temperatura (SOL)
-            - Troca da agua automatica (Quando quente ou àcida)
-            - Marcação dos horarios em que o PET bebeu agua, com projeção de quantidade em mL
-        - Alimentação por bateria
-            - Boa Autonomia
-            - Recarga via painel solar
-        - Camera para monitoramento a distância (Fotos e Vidêos)
-        
-        
-    Pesquisa de Mercado
-    
-    - Pesquisa nos bancos de patentes
-    
-    - Levantamento de Concorrentes
-    
-        - https://www.youtube.com/watch?v=MUnrIJn3qq8
-    
-        - https://www.youtube.com/watch?v=D8cHpOWlC1c
-        
-        JEMPET Petwant SmartFeeder Automatic Pet Feeder
-        - http://www.petwant.com/
-        
-        Automatic Cat Feeder | PF-10 CAT
-        - https://www.petfeedster.com/product/automatic-cat-feeder/
-        
-    
-    - Levantamento dos preços
-    
-    JEMPET Petwant SmartFeeder Automatic Pet Feeder
-    - https://www.amazon.com/Petwant-SmartFeeder-Automatic-Dispenser-Controlled/dp/B01GFTZPDQ
-    - https://www.americanas.com.br/produto/32786320/alimentador-automatico-para-pets-petwant-smart-pet-feeder-pf-103-com-camera-branco-preto?WT.srch=1&epar=bp_pl_00_go_pet_todas_geral_gmv&gclid=CjwKCAjwkrrbBRB9EiwAhlN8_EXzHM2zU3_0T45zzqoFAMBEaPDmdMxqzq4u6ue_NW6odtSgQ0e-RBoCcgkQAvD_BwE&opn=YSMESP&sellerId=7413725000150
-    
-    Smart Feed Automatic Pet Feeder
-    - https://store.petsafe.net/smart-feed
-    
-    Automatic Cat Feeder | PF-10 CAT
-    - https://www.amazon.com/New-Pet-Feedster-PF-10-PLUS/dp/B01N9D4672
-    
-    
-****************************** EXAMPLE *************************
-VHDL Project of the MIPS architecture processor
-By Daniel HC Souza @ PLD22109 - IFSC/Electronic Engineering/Professor:. Renan Starke
-July/2018
-
-_IOs/ --> VHD files for periferics processor unit (IO parts)
-	io_buttons.vhd 		--> buttons and leds for DE10-lite
-	io_displays.vhd 	--> 7-seg displays for DE10-lite
-		io_displays_binarytodisplay.vhd --> Conversor BCD code to 7-seg displays
-	io_spi.vhd 		--> VHD to Gsensor periferic of the DE10-lite
-	io_uart.vhd 	--> VHD for UART communication in the DE10-lite
-		io_uart_fsm.vhd 		--> FSM of the UART
-		io_uart_transmit.vhd 	--> Periferic of the transmit UART communication
-		
-_MPU/ --> VHD files for parts of the processor arch (Registers, ALU, Memory, etc)
-	bancoreg.vhd		--> 32 registers bank (MIPS Arch)
-		muxreg.vhd		--> 32 vias mux for Register Bank
-		regn.vhd		--> Register of the Register Bank
-	branch.vhd			--> Branch SUM (ULA), and control branchs in MIPS Arch
-	decode.vhd			--> Decode FUNCT 5 bits @ MIPS ISA
-	extendsignal.vhd	--> Extend Signal @ MIPS ISA
-	fsm.vhd				--> MIPS FSM (Finite State Machine)
-	memcontrol.vhd		--> RAM Memory Control, Integrated with periferics
-	mux.vhd				--> General Proposit 32bits MUX
-	regnIR.vhd			--> Decoder of the Instructions (Instruction Registers)
-	regnPC.vhd			--> Program Counter
-	rom.vhd				--> Program Memory - ROM
-	ula.vhd				--> Unit Logic Aritmetic
-
-mipsbydan.vhd --> VHD design of MIPS version ByDan Processor (Similar of the MIPS arch)
-testbench_mipsbydan.vhd --> VHD file for simulation with Modelsim
-testbench_mipsbydan.do --> Automation file for simulation with Modelsim
-******************** CAUTION ***********************************
-For simulation in Modelsim, Insert comment lines 276 to 280 (IP ROM from Quartus), and discomment lines 282 to 291 (Internal Designed ROM). Paste in this Internal ROM the codes insided in 003_CODE/
-****************************************************************
-
-###################### OTHER LOCATIONS
-001_PROJ_QUARTUS/		--> Sintetize Project Quartus for DE10-lite
-002_PROJ_XILINS/		--> Sintetize Project Xilins (no used)
-003_CODE/				--> Codes for ROM, writing in MARS - MIPS simulator code
-004_FIGS/				--> Interesting figures
-005_REFS/				--> Theoritical references
-006_DATASHEETS/			--> Factories Manuals
-007_OTHERS/				--> Others VHD files, previously utilized 
