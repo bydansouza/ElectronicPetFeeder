@@ -26,6 +26,7 @@ Here you find this structure of folders and files
 # Steps for sucess:
 
 * 1) Market research:
+    
     ** First we proceded in a market research, seeking out a similar product. **
     
     List of similar products:
@@ -57,16 +58,19 @@ Here you find this structure of folders and files
 
 # Mechanical Project
 
-    this project is a prototype, then we use PVC commercial tubes of the 100mm to make mechanical part. however, for helicoidal transport of feed, we maked (via freecad) a design of the helicoid and built it via 3D printer. this part design you can see in folder `MECHANICAL_DESIGN`
+this project is a prototype, then we use PVC commercial tubes of the 100mm to make mechanical part. however, for helicoidal transport of feed, we maked (via freecad) a design of the helicoid and built it via 3D printer. this part design you can see in folder `MECHANICAL_DESIGN`
     
-    we inspired from [Helidoid Model](https://www.thingiverse.com/thing:27854)
+we inspired from [Helidoid Model](https://www.thingiverse.com/thing:27854)
 
 # Electronic Project
 
-    Let's go to the part that interest us. For the control system, we use a microcontroller ESP8266 because it contain various periferics integrated, example is Wi-Fi Module.
+Let's go to the part that interest us. For the control system, we use a microcontroller ESP8266 because it contain various periferics integrated, example is Wi-Fi Module.
+    
+![PCB 2D](https://github.com/bydansouza/ElectronicPetFeeder/blob/master/PCB_2D.PNG)
 
+![PCB 3D](https://github.com/bydansouza/ElectronicPetFeeder/blob/master/PCB_3D.PNG)
 
-# Main Code
+## Main Code
 
 * this code is based in esp-open-rtos sdk to ESP8266, then recommended to use the [esp-open-rtos](https://github.com/SuperHouse/esp-open-rtos)
 
@@ -74,11 +78,12 @@ Here you find this structure of folders and files
 
 
 # References
-    - 
-    - https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/
-    - https://www.hackster.io/circuito-io-team/iot-pet-feeder-10a4f3
-    - https://www.circuito.io/blog/automatic-pet-feeder/
-    - https://circuitdigest.com/microcontroller-projects/automatic-pet-feeder-using-arduino
-    - https://www.youtube.com/watch?v=hpQ21NZ_fuw
-    
+[1](https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/)
 
+[2](https://www.hackster.io/circuito-io-team/iot-pet-feeder-10a4f3)
+
+[3](https://www.circuito.io/blog/automatic-pet-feeder/)
+
+[4](https://circuitdigest.com/microcontroller-projects/automatic-pet-feeder-using-arduino)
+
+[5](https://www.youtube.com/watch?v=hpQ21NZ_fuw)
