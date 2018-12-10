@@ -58,16 +58,32 @@ Here you find this structure of folders and files
 
 # Mechanical Project
 
-this project is a prototype, then we use PVC commercial tubes of the 100mm to make mechanical part. however, for helicoidal transport of feed, we maked (via freecad) a design of the helicoid and built it via 3D printer. this part design you can see in folder `MECHANICAL_DESIGN`
+This project is a prototype, then we use PVC commercial tubes of the 100mm to make mechanical part. however, for helicoidal transport of feed, we maked (via freecad) a design of the helicoid and built it via 3D printer. this part design you can see in folder `MECHANICAL_DESIGN`
     
-we inspired from [Helidoid Model](https://www.thingiverse.com/thing:27854)
+We inspired from [Helidoid Model](https://www.thingiverse.com/thing:27854) to construct the helicoid part. This is inside into PVC tube of the 100mm of format "T". in the base of the helicoid have a motor that spin this helicoid liberating the feed.
+
+The feed fall into the pot and under it (in the base) have a load cell for 2Kg, controlled from MCU (ESP8266). The client set, with MQTT commands, a quantity of feed and the system control the motor to spin the necessary to liberate a quantity seted.
+
+In the base of system, have too another load cell, of the 50Kg, that monitoring the quantity of feed that fall into the pot (exited of system load). inside in code have a routine that calculate the variation of load, that fall into the pot and exited of system load, this two quantities should are equals.
+
+For monitoring and control the water input and output, have been installed two solenoid valves. Inside the water pot have a temperature sensor and level sensor that through MCU controller we monitoring this two variables, and controled the start or stop of solenoids valves (if necessary).
 
 # Electronic Project
 
-Let's go to the part that interest us. For the control system, we use a microcontroller ESP8266 because it contain various periferics integrated, example is Wi-Fi Module.
-    
+Let's go to the part that interest us. For the control system, we used a microcontroller ESP8266 because it contain various periferics integrated, example is Wi-Fi Module.
+
+Together of the MCU microcontroller, we used two accessories periferics. The first is HX711, Load cell controller that communicate with MCU part trough two pins serial interface, we implemented the librarie for this communicate with ESP8266 (see you into `CODE`). The second is RTC (Real Time Controller) based in DS1307, this is used in control of the time, and for this we used the librarie avaiable in `esp-open-rtos`
+
+For the water temperature control, we used the DS18B20 Sensor (because this is water resistant), then for communicate with MCU microcontroller this sensor use one wire communication, and this is implemented in the librarie included in `esp-open-rtos`.
+
+In the water level control, we used a capacitive sensor connected in input of 555 oscillator. according that the level rises, the oscillation produced in 555 change, the capacitive sensor controll the frequency of the oscillation in 555, thus we have a converter of the water level in frequency of oscilation. the second stage is connect the output os the 555 in an VCO (Voltage Control Oscilator) configured to convert frequency oscilations in voltages levels, thus we have the complete cicle, and we connect this output voltage level in an analog to digital converter of the MCU Controller.
+
+The PCB design could be seen in the next image.  
 ![PCB 2D](https://github.com/bydansouza/ElectronicPetFeeder/blob/master/PCB_2D.PNG)
 
+In this design we priorise the final dimension of board and the disposition os the components in board for reduce EMI an another other possibles mistakes.
+
+The 3D PCB design could be seen in the next image. 
 ![PCB 3D](https://github.com/bydansouza/ElectronicPetFeeder/blob/master/PCB_3D.PNG)
 
 ## Main Code
@@ -79,11 +95,7 @@ Let's go to the part that interest us. For the control system, we use a microcon
 
 # References
 [1](https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/)
-
 [2](https://www.hackster.io/circuito-io-team/iot-pet-feeder-10a4f3)
-
 [3](https://www.circuito.io/blog/automatic-pet-feeder/)
-
 [4](https://circuitdigest.com/microcontroller-projects/automatic-pet-feeder-using-arduino)
-
 [5](https://www.youtube.com/watch?v=hpQ21NZ_fuw)
