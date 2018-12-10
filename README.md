@@ -81,6 +81,10 @@ For the water temperature control, we used the DS18B20 Sensor (because this is w
 
 In the water level control, we used a capacitive sensor connected in input of 555 oscillator. according that the level rises, the oscillation produced in 555 change, the capacitive sensor controll the frequency of the oscillation in 555, thus we have a converter of the water level in frequency of oscilation. the second stage is connect the output os the 555 in an VCO (Voltage Control Oscilator) configured to convert frequency oscilations in voltages levels, thus we have the complete cicle, and we connect this output voltage level in an analog to digital converter of the MCU Controller.
 
+For the water temperature control, we used the DS18B20 Sensor (because this is water resistant), then for communicate with MCU microcontroller this sensor use one wire communication, and this is implemented in the librarie included in `esp-open-rtos`.
+
+In the water level control, we used a capacitive sensor connected in input of 555 oscillator. according that the level rises, the oscillation produced in 555 change, the capacitive sensor controll the frequency of the oscillation in 555, thus we have a converter of the water level in frequency of oscilation. the second stage is connect the output os the 555 in an VCO (Voltage Control Oscilator) configured to convert frequency oscilations in voltages levels, thus we have the complete cicle, and we connect this output voltage level in an analog to digital converter of the MCU Controller.
+
 The PCB design could be seen in the next image.  
 ![PCB 2D](https://github.com/bydansouza/ElectronicPetFeeder/blob/master/PCB_2D.PNG)
 
@@ -95,11 +99,9 @@ The 3D PCB design could be seen in the next image.
 
 * `[Here](https://github.com/xtarke/kairos/tree/master/codes/mqtt)`
 
-
 # References
 [1](https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/)
 [2](https://www.hackster.io/circuito-io-team/iot-pet-feeder-10a4f3)
 [3](https://www.circuito.io/blog/automatic-pet-feeder/)
 [4](https://circuitdigest.com/microcontroller-projects/automatic-pet-feeder-using-arduino)
 [5](https://www.youtube.com/watch?v=hpQ21NZ_fuw)
-
