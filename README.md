@@ -27,26 +27,26 @@ Here you find this structure of folders and files
 # Steps for sucess:
 
 * 1) Market research:
-    
+
 ** First we proceded in a market research, seeking out a similar product. **
+
+List of similar products:
+
+   [10 Best Automatic Pet Feeders 2017](https://www.youtube.com/watch?v=MUnrIJn3qq8)
+
+   [10 Best Automatic Pet Feeders 2018](https://www.youtube.com/watch?v=D8cHpOWlC1c)
+
+   [JEMPET Petwant SmartFeeder Automatic Pet Feeder](http://www.petwant.com/)
     
-    List of similar products:
-    
-    [10 Best Automatic Pet Feeders 2017](https://www.youtube.com/watch?v=MUnrIJn3qq8)
-    
-    [10 Best Automatic Pet Feeders 2018](https://www.youtube.com/watch?v=D8cHpOWlC1c)
-    
-    [JEMPET Petwant SmartFeeder Automatic Pet Feeder](http://www.petwant.com/)
-    
-    [Automatic Cat Feeder | PF-10 CAT](https://www.petfeedster.com/product/automatic-cat-feeder/)
+   [Automatic Cat Feeder | PF-10 CAT](https://www.petfeedster.com/product/automatic-cat-feeder/)
         
 ** in following, we search the prices of these similar products **
     
-    [JEMPET Petwant SmartFeeder Automatic Pet Feeder](https://www.amazon.com/Petwant-SmartFeeder-Automatic-Dispenser-Controlled/dp/B01GFTZPDQ)
+   [JEMPET Petwant SmartFeeder Automatic Pet Feeder](https://www.amazon.com/Petwant-SmartFeeder-Automatic-Dispenser-Controlled/dp/B01GFTZPDQ)
     
-    [Smart Feed Automatic Pet Feeder](https://store.petsafe.net/smart-feed)
+   [Smart Feed Automatic Pet Feeder](https://store.petsafe.net/smart-feed)
     
-    [Automatic Cat Feeder | PF-10 CAT](https://www.amazon.com/New-Pet-Feedster-PF-10-PLUS/dp/B01N9D4672)
+   [Automatic Cat Feeder | PF-10 CAT](https://www.amazon.com/New-Pet-Feedster-PF-10-PLUS/dp/B01N9D4672)
     
     
 * 2) Diferenciais Attributes for this project:
@@ -120,11 +120,11 @@ typedef struct {
 	float 		feeder_waterTemp;		//Temperatura da Agua permitida
 }petFeederControl_t;
 ```
-For the mensures and controls, we create 11 task, you can see theses tasks in the main code in `CODE` folder. for MQTT publisher and subscrtibe routines we was made based in code produced by xtark avaiable`[Here](https://github.com/xtarke/kairos/tree/master/codes/mqtt)` 
+For the mensures and controls, we create 11 tasks, you can see theses tasks in the main code in `CODE` folder. for MQTT publisher and subscrtibe routines we was made based in code produced by xtark avaiable [Here](https://github.com/xtarke/kairos/tree/master/codes/mqtt). 
 
-# References
-[1](https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/)
-[2](https://www.hackster.io/circuito-io-team/iot-pet-feeder-10a4f3)
-[3](https://www.circuito.io/blog/automatic-pet-feeder/)
-[4](https://circuitdigest.com/microcontroller-projects/automatic-pet-feeder-using-arduino)
-[5](https://www.youtube.com/watch?v=hpQ21NZ_fuw)
+# Others Projects
+[Pet Feeder w/ Arduino](https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/)
+[IoT Pet Feeder](https://www.hackster.io/circuito-io-team/iot-pet-feeder-10a4f3)
+[Other Pet Feeder](https://www.circuito.io/blog/automatic-pet-feeder/)
+[Other Pet Feeder w/ Arduino](https://circuitdigest.com/microcontroller-projects/automatic-pet-feeder-using-arduino)
+[Other Mechanical Pet Feeder](https://www.youtube.com/watch?v=hpQ21NZ_fuw)
