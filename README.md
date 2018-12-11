@@ -120,7 +120,7 @@ typedef struct {
 	float 		feeder_waterTemp;		//Temperatura da Agua permitida
 }petFeederControl_t;
 ```
-For the mensures and controls, we create 11 tasks, you can see theses tasks in the main code in `CODE` folder. for MQTT publisher and subscrtibe routines we was made based in code produced by xtark avaiable [Here](https://github.com/xtarke/kairos/tree/master/codes/mqtt). 
+For the mensures and controls, we create 11 tasks, you can see theses tasks in the main code in `CODE` folder. for MQTT publisher and subscrtibe routines we was made based in code produced by @xtark avaiable [Here](https://github.com/xtarke/kairos/tree/master/codes/mqtt). 
 
 # Others Projects
 [Pet Feeder w/ Arduino](https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/)
