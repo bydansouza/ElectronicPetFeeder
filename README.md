@@ -4,7 +4,8 @@ Electronic Pet Feeder Project - Automatic Feeder for Dogs and Cats ;)
 By Daniel Henrique Camargo de Souza @ PIN22107 - IFSC/Electronic Engineering/Professors: Daniel Lohmann AND Robinson Pizzio - Dezembro/2018
 
 # Descript:
-* This project consists of an electronic automatic feeder for dogs and cats, and this project were made from course Integrator Project class in undergraduate at Electronic Engineering by IFSC/Florianópolis@Brazil.
+
+This project consists of an electronic automatic feeder for dogs and cats, and this project were made from course Integrator Project class in undergraduate at Electronic Engineering by IFSC/Florianópolis@Brazil.
 
 # Guide to using this repository folders and files
 Here you find this structure of folders and files
@@ -27,7 +28,7 @@ Here you find this structure of folders and files
 
 * 1) Market research:
     
-    ** First we proceded in a market research, seeking out a similar product. **
+** First we proceded in a market research, seeking out a similar product. **
     
     List of similar products:
     
@@ -39,7 +40,7 @@ Here you find this structure of folders and files
     
     [Automatic Cat Feeder | PF-10 CAT](https://www.petfeedster.com/product/automatic-cat-feeder/)
         
-    ** in following, we search the prices of these similar products **
+** in following, we search the prices of these similar products **
     
     [JEMPET Petwant SmartFeeder Automatic Pet Feeder](https://www.amazon.com/Petwant-SmartFeeder-Automatic-Dispenser-Controlled/dp/B01GFTZPDQ)
     
@@ -81,10 +82,6 @@ For the water temperature control, we used the DS18B20 Sensor (because this is w
 
 In the water level control, we used a capacitive sensor connected in input of 555 oscillator. according that the level rises, the oscillation produced in 555 change, the capacitive sensor controll the frequency of the oscillation in 555, thus we have a converter of the water level in frequency of oscilation. the second stage is connect the output os the 555 in an VCO (Voltage Control Oscilator) configured to convert frequency oscilations in voltages levels, thus we have the complete cicle, and we connect this output voltage level in an analog to digital converter of the MCU Controller.
 
-For the water temperature control, we used the DS18B20 Sensor (because this is water resistant), then for communicate with MCU microcontroller this sensor use one wire communication, and this is implemented in the librarie included in `esp-open-rtos`.
-
-In the water level control, we used a capacitive sensor connected in input of 555 oscillator. according that the level rises, the oscillation produced in 555 change, the capacitive sensor controll the frequency of the oscillation in 555, thus we have a converter of the water level in frequency of oscilation. the second stage is connect the output os the 555 in an VCO (Voltage Control Oscilator) configured to convert frequency oscilations in voltages levels, thus we have the complete cicle, and we connect this output voltage level in an analog to digital converter of the MCU Controller.
-
 The PCB design could be seen in the next image.  
 ![PCB 2D](https://github.com/bydansouza/ElectronicPetFeeder/blob/master/PCB_2D.PNG)
 
@@ -95,9 +92,35 @@ The 3D PCB design could be seen in the next image.
 
 ## Main Code
 
-* this code is based in esp-open-rtos sdk to ESP8266, then recommended to use the [esp-open-rtos](https://github.com/SuperHouse/esp-open-rtos)
+The main code was made with esp-open-rtos sdk to ESP8266, then recommended to use the [esp-open-rtos](https://github.com/SuperHouse/esp-open-rtos). after defines, we created a sctruc that contain the principals control variables and the principals flags for control system, see next.
 
-* `[Here](https://github.com/xtarke/kairos/tree/master/codes/mqtt)`
+```
+typedef struct {
+	union
+	{
+		struct
+		{
+			uint32_t fIsTime		: 1;	//Chegou a Hora da Dose
+			uint32_t fEqualDose		: 1;	//Dose Igualou
+			uint32_t fMotorDose		: 1;	//Start/Stop do Motor da Dose
+			uint32_t fWaterLevel	: 1;	//Chegou no Nível de Agua
+			uint32_t fWaterTemp		: 1;	//Temperatura Ultrapassou
+			uint32_t fWaterInput	: 1;	//Start/Stop entrada de agua
+			uint32_t fWaterOutput	: 1;	//Start/Stop Saída de agua
+			uint32_t fUnusedBits	: 25;	//Flags não usadas (fUnusedBits+Others = 32bits)
+		};
+		uint32_t fAllFlags;					//All Flags
+	}			feeder_flags;			//Flags de Controle
+	uint8_t 	feeder_nDose;			//Numero de Doses Diárias programadas
+	uint32_t 	feeder_min[NMAX_DOSE];	//Minutos das Doses programadas
+	uint32_t 	feeder_hour[NMAX_DOSE];	//Horas das Doses programadas
+	uint32_t 	feeder_mday;			//Marca o Dia, para não repetir horários
+	uint32_t 	feeder_dose;			//Quatidade da Dose Programada
+	uint32_t	feeder_delay;			//Delay para as demais Tarefas
+	float 		feeder_waterTemp;		//Temperatura da Agua permitida
+}petFeederControl_t;
+```
+For the mensures and controls, we create 11 task, you can see theses tasks in the main code in `CODE` folder. for MQTT publisher and subscrtibe routines we was made based in code produced by xtark avaiable`[Here](https://github.com/xtarke/kairos/tree/master/codes/mqtt)` 
 
 # References
 [1](https://www.instructables.com/id/Automatic-Arduino-Powered-Pet-Feeder/)
